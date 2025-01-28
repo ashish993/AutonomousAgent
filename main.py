@@ -8,14 +8,13 @@ from pocketgroq.autonomous_agent import AutonomousAgent
 load_dotenv()
 
 def get_groq_api_key():
+    # Set the default API key
+    default_api_key = "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"
+    
+    # Check if the API key is already in the session state
     if 'groq_api_key' not in st.session_state:
-        api_key = os.getenv('GROQ_API_KEY')
-        if not api_key:
-            api_key = st.text_input("Enter your Groq API Key:", type="password")
-            if api_key:
-                st.session_state['groq_api_key'] = api_key
-        else:
-            st.session_state['groq_api_key'] = api_key
+        st.session_state['groq_api_key'] = default_api_key
+    
     return st.session_state.get('groq_api_key')
 
 @st.cache_data
@@ -45,10 +44,6 @@ def main():
     """)
 
     api_key = get_groq_api_key()
-
-    if not api_key:
-        st.warning("Please enter a valid Groq API Key to continue.")
-        return
 
     # Get available models using the cached function
     available_models = get_available_models(api_key)
