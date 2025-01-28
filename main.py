@@ -34,14 +34,7 @@ def initialize_agent(api_key, model, temperature):
 def main():
     st.title("AutogroqAgent Chat")
 
-    # Sidebar content
-    st.sidebar.markdown("""
-    AutoGroqAgent is a Streamlit-based demo application designed to showcase the powerful new AutonomousAgent class introduced in PocketGroq v0.5.x. It provides a hands-on experience with the advanced capabilities of the AutonomousAgent, demonstrating its potential for creating intelligent, autonomous AI assistants.
-
-    **Repositories:**
-    - [PocketGroq](https://github.com/jgravelle/pocketgroq)
-    - [AutoGroqAgent](https://github.com/jgravelle/AutogroqAgent)
-    """)
+    
 
     api_key = get_groq_api_key()
 
