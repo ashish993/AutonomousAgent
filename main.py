@@ -32,7 +32,7 @@ def initialize_agent(api_key, model, temperature):
     return AutonomousAgent(groq_provider, model=model, temperature=temperature)
 
 def main():
-    st.title("AutogroqAgent Chat")
+    st.title("Research Agent Chat")
 
     
 
